@@ -22,7 +22,7 @@ app.get('/users', (req, res) => {
     // console.log('query', req.query);
     if (req.query.name) {
         const search = req.query.name.toLowerCase();
-        const matched = users.filter(user => user.name.toLocaleLowerCase().includes())
+        const matched = users.filter(user => user.name.toLocaleLowerCase().includes(search))
         res.send(matched);
     }
     else {
